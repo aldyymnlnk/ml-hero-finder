@@ -32,6 +32,12 @@ const heroes = [
     role: "Support",
     image: "rafaela.jpg",
   },
+    {
+    id: "tigreal",
+    name: "Tigreal",
+    role: "Tank",
+    image: "tigreal.jpg",
+  },
 ];
 
 function Heroes() {
