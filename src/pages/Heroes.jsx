@@ -6,19 +6,31 @@ const heroes = [
     id: "alucard",
     name: "Alucard",
     role: "Fighter",
-    image: "https://via.placeholder.com/200",
+    image: "alucard.jpg",
   },
   {
     id: "miya",
     name: "Miya",
     role: "Marksman",
-    image: "https://via.placeholder.com/200",
+    image: "miya.jpg",
   },
   {
-    id: "tigreal",
-    name: "Tigreal",
-    role: "Tank",
-    image: "pictures/tigrel.jpg",
+    id: "valir",
+    name: "Valir",
+    role: "Mage",
+    image: "valir.jpg",
+  },
+  {
+    id: "ling",
+    name: "Ling",
+    role: "Jungler",
+    image: "ling.jpg",
+  },
+  {
+    id: "rafaela",
+    name: "Rafaela",
+    role: "Support",
+    image: "rafaela.jpg",
   },
 ];
 
@@ -26,9 +38,7 @@ function Heroes() {
   const [filter, setFilter] = useState("All");
 
   const filteredHeroes =
-    filter === "All"
-      ? heroes
-      : heroes.filter((hero) => hero.role === filter);
+    filter === "All" ? heroes : heroes.filter((hero) => hero.role === filter);
 
   return (
     <div style={styles.container}>
@@ -45,6 +55,9 @@ function Heroes() {
           <option value="Fighter">Fighter</option>
           <option value="Marksman">Marksman</option>
           <option value="Tank">Tank</option>
+          <option value="Support">Support</option>
+          <option value="Jungler">Jungler</option>
+          <option value="Mage">Mage</option>
         </select>
       </div>
 
@@ -56,9 +69,7 @@ function Heroes() {
             onMouseEnter={(e) =>
               (e.currentTarget.style.transform = "scale(1.05)")
             }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "scale(1)")
-            }
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
           >
             <img src={hero.image} alt={hero.name} style={styles.image} />
             <h3>{hero.name}</h3>
